@@ -1,5 +1,6 @@
 <script setup>
 import Sidebar from '../components/Sidebar.vue';
+import FoodCard from '../components/FoodCard.vue';
 </script>
 
 <template>
@@ -12,60 +13,10 @@ import Sidebar from '../components/Sidebar.vue';
           <button class="btn-add-product">Add Product</button>
         </div>
         <div class="grid-product">
-          <div class="card-product">
-            <img src="src/assets/img/1.jpeg" class="img-product" />
-            <div class="card-content">
-              <div class="category">pork</div>
-              <div class="name-product">Product 1</div>
-              <div class="price-product">Rp. 100.000</div>
-              <div class="stock-product">Stock: 10</div>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="src/assets/img/1.jpeg" class="img-product" />
-            <div class="card-content">
-              <div class="category">pork</div>
-              <div class="name-product">Product 1</div>
-              <div class="price-product">Rp. 100.000</div>
-              <div class="stock-product">Stock: 10</div>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="src/assets/img/1.jpeg" class="img-product" />
-            <div class="card-content">
-              <div class="category">pork</div>
-              <div class="name-product">Product 1</div>
-              <div class="price-product">Rp. 100.000</div>
-              <div class="stock-product">Stock: 10</div>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="src/assets/img/1.jpeg" class="img-product" />
-            <div class="card-content">
-              <div class="category">pork</div>
-              <div class="name-product">Product 1</div>
-              <div class="price-product">Rp. 100.000</div>
-              <div class="stock-product">Stock: 10</div>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="src/assets/img/1.jpeg" class="img-product" />
-            <div class="card-content">
-              <div class="category">pork</div>
-              <div class="name-product">Product 1</div>
-              <div class="price-product">Rp. 100.000</div>
-              <div class="stock-product">Stock: 10</div>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="src/assets/img/1.jpeg" class="img-product" />
-            <div class="card-content">
-              <div class="category">pork</div>
-              <div class="name-product">Product 1</div>
-              <div class="price-product">Rp. 100.000</div>
-              <div class="stock-product">Stock: 10</div>
-            </div>
-          </div>
+          <FoodCard category="pork" name="Product 1" price="Rp. 100.000" stock="Stock: 10" />
+          <FoodCard category="pork" name="Product 1" price="Rp. 100.000" stock="Stock: 10" />
+          <FoodCard category="pork" name="Product 1" price="Rp. 100.000" stock="Stock: 10" />
+          <FoodCard category="pork" name="Product 1" price="Rp. 100.000" stock="Stock: 10" />
         </div>
       </div>
     </div>

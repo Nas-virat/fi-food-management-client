@@ -13,6 +13,9 @@ import Sidebar from '../components/Sidebar.vue';
                         <h1>information food</h1>
                         <button class="btn-add-product">Edit Product</button>
                     </div>
+                    <div>
+
+                    </div>
                 </div>
                 <div class="ingredient">
                     <div class="ingredient-header">
