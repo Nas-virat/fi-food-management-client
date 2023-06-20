@@ -1,12 +1,23 @@
-<script setup>
+<script>
+export default {
+  data() {
+    return {
+      productId: null,
+      icon: 'src/assets/img/Fi-icon.png',
+    };
+  },
+  created() {
+    this.productId = this.$route.params.id;
+  },
 
+};
 </script>
 
 
 
 <template>
     <div class="bg-sidebar">
-        <img src="src/assets/img/Fi-icon.png" class="icon" />
+        <img v-bind:src="icon" class="icon" />
         <div class="list">
             <router-link to="/" class="item">Home</router-link>
             <router-link to="/sales" class="item">Sales</router-link>

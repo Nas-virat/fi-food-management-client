@@ -1,35 +1,48 @@
-<script setup>
-defineProps({
-    category: {
-        type: String,
-        required: true
+<script>
+export default {
+    name: 'FoodCard',
+    data(){
+      return {
+        productImage: 'src/assets/img/1.jpeg'
+      }
     },
-    name: {
+    props:{
+      category: {
         type: String,
         required: true
+      },
+      name: {
+          type: String,
+          required: true
+      },
+      price: {
+          type: String,
+          required: true
+      },
+      stock: {
+          type: String,
+          required: true
+      }
     },
-    price: {
-        type: String,
-        required: true
-    },
-    stock: {
-        type: String,
-        required: true
+    methods: {
+        navigatorToProduct() {
+            this.$router.push(`/product/${1}`)
+        }
     }
-
-})
+}
 </script>
 
 
 <template>
     <div class="card-product">
-        <img src="src/assets/img/1.jpeg" class="img-product" />
+        <img v-bind:src="productImage" class="img-product" />
         <div class="card-content">
             <div class="category">{{ category }}</div>
             <div class="name-product">{{ name }}</div>
             <div class="price-product">{{ price }}</div>
             <div class="stock-product">{{ stock }}</div>
         </div>
+        <button class="btn btn-primary" @click="navigatorToProduct">View product</button>
     </div>
 </template>
 
