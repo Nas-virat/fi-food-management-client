@@ -31,7 +31,7 @@ import Sidebar from '../components/Sidebar.vue';
                         <button class="btn">Add Product</button>
                     </div>
                     <div class="ingredient-table">
-
+                        
                     </div>
                 </div>
             </div>
@@ -86,10 +86,21 @@ import Sidebar from '../components/Sidebar.vue';
     margin-right: 80px;
 }
 
-.text-content{
+.category{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.name-product{
     margin-top: 10px;
     font-size: 20px;
     font-weight: 700;
+}
+
+.text-content{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 

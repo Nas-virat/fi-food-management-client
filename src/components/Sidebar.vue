@@ -6,13 +6,13 @@
 
 <template>
     <div class="bg-sidebar">
-        <div class="icon"></div>
+        <img src="src/assets/img/Fi-icon.png" class="icon" />
         <div class="list">
-            <div class="item">Home</div>
-            <div class="item">Sales</div>
-            <div class="item">Transaction</div>
-            <div class="item">Inventory</div>
-            <div class="item">Supplier</div>
+            <router-link to="/" class="item">Home</router-link>
+            <router-link to="/sales" class="item">Sales</router-link>
+            <router-link to="/transaction" class="item">Transaction</router-link>
+            <router-link to="/inventory" class="item">Inventory</router-link>
+            <router-link to="/supplier" class="item">Supplier</router-link>
         </div>
     </div>
 </template>
@@ -49,7 +49,8 @@
 .item {
     font-size: 20px;
     font-weight: 700;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+    text-decoration: none; 
     color: #fff;
     margin-top: 20px;
     cursor: pointer;

@@ -24,6 +24,26 @@ const router = createRouter({
       component: ProductView,
     },
     {
+      path: '/inventory',
+      name: 'inventory',
+      component: () => import('../views/InventoryView.vue')
+    },
+    {
+      path: '/sales',
+      name: 'sales',
+      component: () => import('../views/SaleView.vue')
+    },
+    {
+      path:'/supplier',
+      name: 'supplier',
+      component: () => import('../views/SupplierView.vue')
+    },
+    {
+      path: '/transaction',
+      name: 'transaction',
+      component: () => import('../views/TransactionView.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('../views/NotFoundView.vue')
