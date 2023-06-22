@@ -1,7 +1,32 @@
-<script setup>
+<script>
 import Sidebar from '../components/Sidebar.vue';
+import Table from '../components/Table.vue';
+export default {
+    name: 'ProductView',
+    components: {
+        Sidebar,
+        Table
+    },
+    data() {
+        return {
+            items: [
+                { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+                { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+                { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
+                { age: 38, first_name: 'Jami', last_name: 'Carney' }
+            ],
+            columns: ['Ingredient', 'Stock', 'Unit', 'LastModify'],
+            itemsdata:[
+                {Ingredient:'oil',Stock:'10',Unit:'ml',LastModify:'2021-08-01'},
+                {Ingredient:'salt',Stock:'10',Unit:'gr',LastModify:'2021-08-01'},
+                {Ingredient:'pepper',Stock:'10',Unit:'gr',LastModify:'2021-08-01'},
+                {Ingredient:'sugar',Stock:'10',Unit:'gr',LastModify:'2021-08-01'},
+                {Ingredient:'chicken',Stock:'10',Unit:'gr',LastModify:'2021-08-01'},
+            ]
+        }
+    }
+    }
 </script>
-
 
 <template>
     <main>
@@ -30,9 +55,7 @@ import Sidebar from '../components/Sidebar.vue';
                         <h1>Ingredient</h1>
                         <button class="btn">Add Product</button>
                     </div>
-                    <div class="ingredient-table">
-                        
-                    </div>
+                    <Table :items="itemsdata" :columns="columns" />
                 </div>
             </div>
         </div>
