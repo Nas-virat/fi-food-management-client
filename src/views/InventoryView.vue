@@ -1,5 +1,14 @@
-<script setup>
+<script>
 import Sidebar from '../components/Sidebar.vue';
+import Table from '../components/Table.vue';
+
+export default{
+  name: 'InventoryView',
+  components: {
+    Sidebar,
+    Table,
+  },
+}
 </script>
 
 <template>
@@ -9,8 +18,8 @@ import Sidebar from '../components/Sidebar.vue';
       <div class="main">
         <div class="head-product">
           <h1>Inventory</h1>
-          <button class="btn-add-product">Add Product</button>
         </div>
+        
       </div>
     </div>
   </main>

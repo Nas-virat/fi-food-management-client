@@ -24,6 +24,7 @@ export default {
             <router-link to="/transaction" class="item">Transaction</router-link>
             <router-link to="/inventory" class="item">Inventory</router-link>
             <router-link to="/supplier" class="item">Supplier</router-link>
+            <router-link to="/about" class="item">About Us</router-link>
         </div>
     </div>
 </template>

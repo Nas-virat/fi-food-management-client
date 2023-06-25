@@ -1,5 +1,49 @@
-<script setup>
+<script>
 import Sidebar from '../components/Sidebar.vue';
+import Table from '../components/Table.vue';
+import { Bar } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
+ChartJS.register(BarElement, Title, Tooltip, Legend, CategoryScale, LinearScale);
+
+export default{
+  name: 'SaleView',
+  components: {
+    Sidebar,
+    Bar,
+    Table,
+  },
+  data() {
+    return {
+      chartData: {
+        labels: [ 'January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'],
+        datasets: [{
+          label: 'Sale',
+          data: [40, 20, 12, 20, 30, 52,32,12,43,54,65,76],
+          backgroundColor: '#14213D',
+          borderWidth: 1,
+          barThickness: 20,
+          maxBarThickness: 30,
+          minBarLength: 2,
+        }]
+      },
+      chartOptions: {
+        responsive: true,
+      },
+      topSale:{
+        columns:['name','Quantity','Sale'],
+        data:[
+          { name: 'Tom Yum Goong', Quantity: '10', Sale: '1000' },
+          { name: 'Pad Thai', Quantity: '5', Sale: '500' },
+          { name: 'Green Curry', Quantity: '8', Sale: '800' },
+          { name: 'Massaman Curry', Quantity: '15', Sale: '1200' },
+          { name: 'Som Tum', Quantity: '12', Sale: '1100' },
+          { name: 'Khao Pad', Quantity: '7', Sale: '650' },
+          { name: 'Panang Curry', Quantity: '9', Sale: '900' },    
+        ]
+      }
+    }
+  }
+}
 </script>
 
 <template>
@@ -9,7 +53,24 @@ import Sidebar from '../components/Sidebar.vue';
       <div class="main">
         <div class="head-product">
           <h1>Sale</h1>
-          <button class="btn-add-product">Add Product</button>
+          <button class="btn-add-product">Add Sale</button>
+        </div>
+        <div class="top-section section">
+          <h3>This year Sale</h3>
+          <Bar
+            id="my-chart-id"
+            :options="chartOptions"
+            :data="chartData"
+          />
+        </div>
+        <div class="buttom-section ">
+          <div class="top-sale section">
+            <h3>Top Sale</h3>
+            <Table :items="topSale.data" :columns="topSale.columns"/>
+          </div>
+          <div class="sale-category section">
+            <h3>Sale By Category</h3>
+          </div>
         </div>
       </div>
     </div>
@@ -46,60 +107,31 @@ import Sidebar from '../components/Sidebar.vue';
   transform: scale(1.1);
 }
 
-.grid-product {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  align-items: center;
+.section{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
-.card-product {
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  border-radius: 5px;
+.top-section {
+  margin-top: 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-.img-product {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
+.buttom-section {
+  margin-top: 40px;
+  display: flex;
 }
 
-.card-content {
+.top-sale {
+  width: 50%;
   padding: 20px;
 }
 
-.category {
-  font-size: 16px;
-  font-weight: 300;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.name-product {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: 800;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.price-product {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 300;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.stock-product {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 300;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.sale-category {
+  width: 50%;
+  padding: 20px;
 }
 
 </style>

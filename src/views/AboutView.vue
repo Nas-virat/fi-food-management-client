@@ -1,15 +1,42 @@
+<script>
+import Sidebar from '../components/Sidebar.vue';
+import Table from '../components/Table.vue';
+
+export default{
+  name: 'InventoryView',
+  components: {
+    Sidebar,
+    Table,
+  },
+}
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main>
+    <div>
+      <Sidebar />
+      <div class="main">
+        <div class="head">
+          <h1>About Us</h1>
+        </div>
+        
+      </div>
+    </div>
+  </main>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<style scoped>
+.main {
+  margin-left: 330px;
+  width: 75%;
+  height: 100%;
+  padding: 20px;
 }
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+
 </style>

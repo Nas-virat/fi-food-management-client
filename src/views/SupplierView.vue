@@ -1,5 +1,33 @@
-<script setup>
+<script>
 import Sidebar from '../components/Sidebar.vue';
+import Table from '../components/Table.vue';
+
+export default {
+  name: 'SupplierView',
+  components: {
+    Sidebar,
+    Table
+  },
+  data(){
+    return{
+      itemsdata:[
+        {Supplier:'PT. Sinar Jaya',Address:'Jl. Raya Bogor',Phone:'08123456789',Email:'a@gmail.com'},
+        {Supplier:'PT. Makmur Sejahtera',Address:'Jl. Sudirman',Phone:'08234567890',Email:'b@gmail.com'},
+        {Supplier:'PT. Abadi Sentosa',Address:'Jl. Merdeka',Phone:'08345678901',Email:'c@gmail.com'},
+        {Supplier:'PT. Maju Bersama',Address:'Jl. Gatot Subroto',Phone:'08456789012',Email:'d@gmail.com'},
+        {Supplier:'PT. Harmoni Indah',Address:'Jl. Thamrin',Phone:'08567890123',Email:'e@gmail.com'},
+        {Supplier:'PT. Gemilang Utama',Address:'Jl. Kebon Jeruk',Phone:'08678901234',Email:'f@gmail.com'},
+        {Supplier:'PT. Cemerlang Mandiri',Address:'Jl. Tomang',Phone:'08789012345',Email:'g@gmail.com'},
+        {Supplier:'PT. Bersatu Abadi',Address:'Jl. Kemanggisan',Phone:'08890123456',Email:'h@gmail.com'},
+        {Supplier:'PT. Jaya Makmur',Address:'Jl. Pejaten',Phone:'08901234567',Email:'i@gmail.com'},
+        {Supplier:'PT. Sentosa Jaya',Address:'Jl. Puri Indah',Phone:'09012345678',Email:'j@gmail.com'},
+        {Supplier:'PT. Indah Makmur',Address:'Jl. Kemang',Phone:'09123456789',Email:'k@gmail.com'},
+        {Supplier:'PT. Mulia Sejahtera',Address:'Jl. Menteng',Phone:'09234567890',Email:'l@gmail.com'}
+      ],
+      columns:['Supplier','Address','Phone','Email']
+    }
+  }
+}
 </script>
 
 <template>
@@ -9,8 +37,9 @@ import Sidebar from '../components/Sidebar.vue';
       <div class="main">
         <div class="head-product">
           <h1>Supplier</h1>
-          <button class="btn-add-product">Add Product</button>
+          <button class="btn-add-supplier">Add Supplier</button>
         </div>
+        <Table :items="itemsdata" :columns="columns" />
       </div>
     </div>
   </main>
@@ -29,7 +58,7 @@ import Sidebar from '../components/Sidebar.vue';
   align-items: center;
 }
 
-.btn-add-product {
+.btn-add-supplier {
   margin-left: 30px;
   padding: 10px 20px;
   border: none;
