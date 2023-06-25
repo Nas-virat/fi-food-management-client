@@ -10,7 +10,14 @@ export default{
             type: Array,
             required: true
         },
-        filterKey: String
+        moredetails: {
+            type: Boolean,
+            default: false
+        },
+        namepage:{
+            type: String,
+            required: false
+        },
     },
 }
 </script>
@@ -26,6 +33,7 @@ export default{
                     <th scope="col" v-for="key in columns">
                         {{key}}
                     </th>
+                    <th scope="col" v-if="moredetails">More Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +41,11 @@ export default{
                     <th scope="row">{{index}}</th>
                     <td v-for="key in columns">
                         {{item[key]}}
+                    </td>
+                    <td v-if="moredetails">
+                        <router-link :to="{name: 'ProductView', params: {id: item.id}}">
+                            <button class="btn">More Details</button>
+                        </router-link>
                     </td>
                 </tr>
             </tbody>
