@@ -28,8 +28,8 @@ export default {
       <Sidebar />
       <div class="main">
         <div class="head-product">
-          <h1>Transaction</h1>
-          <button class="btn-add-product">Add Transaction</button>
+          <h1>Inventory</h1>
+          <button class="btn-add-product">Inventory</button>
         </div>
         <Table :items="itemsdata" :columns="columns" />
       </div>
